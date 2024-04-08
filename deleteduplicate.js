@@ -32,21 +32,21 @@ function removeDuplicatesByUsingSort(arr) {
   return result;
 }
 
-const removeDuplicate = (arr, nameFunc) => {
+const removeDuplicate = (arr, method) => {
   const removeDuplicateFunctions = {
-    byUsingSort: removeDuplicatesByUsingSort,
-    byUsingMap: removeDuplicatesByUsingMap,
-    byUsingFilter: removeDuplicatesByUsingFilter,
-    byUsingIndexOf: removeDuplicatesByUsingIndexOf,
+    sort: removeDuplicatesByUsingSort,
+    map: removeDuplicatesByUsingMap,
+    filter: removeDuplicatesByUsingFilter,
+    indexOf: removeDuplicatesByUsingIndexOf,
   };
-  if (!removeDuplicateFunctions[nameFunc]) {
+  if (!removeDuplicateFunctions[method]) {
     throw new Error(
-      "Invalid nameFunc. It should be 'REMOVE_DUPLICATES_BY_SORT' or 'REMOVE_DUPLICATES_BY_MAP'."
+      "Invalid method. It should be 'REMOVE_DUPLICATES_BY_SORT' or 'REMOVE_DUPLICATES_BY_MAP'."
     );
   }
-  return removeDuplicateFunctions[nameFunc](arr);
+  return removeDuplicateFunctions[method](arr);
 };
 
 const arr = [1, 3, 2, 2, 3, 5, 6, 5];
 
-console.log(removeDuplicate(arr, "byUsingSort"));
+console.log(removeDuplicate(arr, "sort"));

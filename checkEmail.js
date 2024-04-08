@@ -25,3 +25,60 @@ if (validateEmail(email, "usingMatchMethod")) {
 } else {
   console.log("Địa chỉ email không hợp lệ.");
 }
+
+let questionTree = {
+  questionInit: "Bạn làm nghề gì?",
+  answers: [
+    {
+      answer: "Bác Sĩ",
+      nextQuestion: {
+        question: "Bạn là bác sĩ khoa nào?",
+        answers: [
+          {
+            answer: "aaaa",
+            nextQuestion: {
+              question: "htht",
+              answers: [],
+            },
+          },
+        ],
+      },
+    },
+    {
+      answer: "Dev",
+      nextQuestion: {
+        question: "Bạn làm Developer ở công ty nào?",
+        answers: [
+          {
+            answer: "aaaa",
+            nextQuestion: {
+              question: "htht",
+              answers: [],
+            },
+          },
+        ],
+      },
+    },
+    {
+      answer: "Kỹ sư",
+      nextQuestion: {
+        question: "Bạn làm kỹ sư chuyên ngành nào?",
+        answers: [
+          {
+            answer: "aaaa",
+            nextQuestion: {
+              question: "htht",
+              answers: [],
+            },
+          },
+        ],
+      },
+    },
+  ],
+};
+
+const newNode = questionTree.answers[0].nextQuestion;
+
+newNode.question = "hahah";
+console.log(newNode);
+console.log(questionTree.answers[0]);
